@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace StudentManagement.Models
+{
+    public class Teacher : Person
+    {
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "聘用时间")]
+        public DateTime HireDate { get; set; }
+
+        public ICollection<CourseAssignment> CourseAssignments { get; set; }
+        public OfficeLocation OfficeLocation { get; set; }
+    }
+}
